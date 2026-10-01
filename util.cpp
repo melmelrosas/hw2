@@ -19,14 +19,12 @@ std::set<std::string> parseStringToWords(string rawWords)
 // step 1 is to read over the input string char by a loop
 // decalire the set of strongs and string currret
 
-string current;
-set<string>wordList; 
+    string current;
+    set<string>wordList; 
 // call the convToLower fx
-rawWords = convToLower(rawWords); // rawWords is the input string
+    rawWords = convToLower(rawWords); // rawWords is the input string
 
   for(unsigned int i = 0; i < rawWords.size(); i++ ){
-
-
     // if statement to check if the current character is a num
     if(isalnum (rawWords[i])){
       current += rawWords[i]; // append one charcater at a time
@@ -39,6 +37,8 @@ rawWords = convToLower(rawWords); // rawWords is the input string
         current.clear(); // reset the string 
         
     }
+  }if(current.size() >= 2){
+    wordList.insert(current);
   }
   return wordList;
 }
